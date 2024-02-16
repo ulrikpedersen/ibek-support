@@ -1,0 +1,111 @@
+# yaml-language-server: $schema=https://github.com/epics-containers/ibek/releases/download/1.2.0/ibek.support.schema.json
+
+module: OXCS700
+
+defs:
+
+  - name: OXPH700
+    description: |-
+      Control for Oxford cryostream 700 series
+    args:
+
+      - type: str
+        name: P
+        description: |-
+          Device Prefix
+
+      - type: str
+        name: Q
+        description: |-
+          Device suffix
+
+      - type: str
+        name: PORT
+        description: |-
+          Asyn port to connect to
+
+      - type: str
+        name: gda_name
+        description: |-
+          Name in gda interface file (Default = )
+
+      - type: str
+        name: gda_desc
+        description: |-
+          Description in gda interface file (Default = )
+
+      - type: id
+        name: name
+        description: |-
+          Object and gui association name
+
+      - type: int
+        name: DISABLE_COMMS
+        description: |-
+          Optional macro to control whether comms are disabled (1) or not (0) on startup. Defaults to disabled
+        default: 1
+
+    databases:
+
+      - file: $(OXCS700)/db/OXPH700.template
+        args:
+          name:
+          gda_name:
+          Q:
+          P:
+          gda_desc:
+          DISABLE_COMMS:
+          PORT:
+
+  - name: OXCS700
+    description: |-
+      Control for Oxford cryostream 700 series (Phenix)
+    args:
+
+      - type: str
+        name: P
+        description: |-
+          Device Prefix
+
+      - type: str
+        name: Q
+        description: |-
+          Device suffix
+
+      - type: str
+        name: PORT
+        description: |-
+          Asyn port to connect to
+
+      - type: str
+        name: gda_name
+        description: |-
+          Name in gda interface file (Default = )
+
+      - type: str
+        name: gda_desc
+        description: |-
+          Description in gda interface file (Default = )
+
+      - type: id
+        name: name
+        description: |-
+          Object and gui association name
+
+      - type: int
+        name: DISABLE_COMMS
+        description: |-
+          Optional macro to control whether comms are disabled (1) or not (0) on startup. Defaults to disabled
+        default: 1
+
+    databases:
+
+      - file: $(OXCS700)/db/OXCS700.template
+        args:
+          name:
+          gda_name:
+          Q:
+          P:
+          gda_desc:
+          DISABLE_COMMS:
+          PORT:
