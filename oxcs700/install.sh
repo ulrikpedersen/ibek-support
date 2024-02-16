@@ -14,7 +14,7 @@ set -xe
 ibek support apt-install --only=dev doxygen
 
 # get the source and fix up the configure/RELEASE files
-ibek support git-clone ${NAME} ${VERSION} --org https://github.com/epics-containers/
+ibek support git-clone ${NAME} ${VERSION} --org https://github.com/subinsaji/
 
 ibek support register ${NAME}
 
