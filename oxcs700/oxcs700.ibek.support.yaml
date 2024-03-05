@@ -3,12 +3,10 @@
 module: OXCS700
 
 defs:
-
   - name: OXPH700
     description: |-
       Control for Oxford cryostream 700 series
     args:
-
       - type: str
         name: P
         description: |-
@@ -24,16 +22,6 @@ defs:
         description: |-
           Asyn port to connect to
 
-      - type: str
-        name: gda_name
-        description: |-
-          Name in gda interface file (Default = )
-
-      - type: str
-        name: gda_desc
-        description: |-
-          Description in gda interface file (Default = )
-
       - type: id
         name: name
         description: |-
@@ -46,7 +34,6 @@ defs:
         default: 1
 
     databases:
-
       - file: $(OXCS700)/db/OXPH700.template
         args:
           name:
@@ -61,7 +48,6 @@ defs:
     description: |-
       Control for Oxford cryostream 700 series (Phenix)
     args:
-
       - type: str
         name: P
         description: |-
@@ -77,16 +63,6 @@ defs:
         description: |-
           Asyn port to connect to
 
-      - type: str
-        name: gda_name
-        description: |-
-          Name in gda interface file (Default = )
-
-      - type: str
-        name: gda_desc
-        description: |-
-          Description in gda interface file (Default = )
-
       - type: id
         name: name
         description: |-
@@ -99,13 +75,10 @@ defs:
         default: 1
 
     databases:
-
       - file: $(OXCS700)/db/OXCS700.template
         args:
           name:
-          gda_name:
           Q:
           P:
-          gda_desc:
           DISABLE_COMMS:
           PORT:
