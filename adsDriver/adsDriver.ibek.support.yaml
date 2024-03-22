@@ -1,0 +1,66 @@
+# yaml-language-server: $schema=https://github.com/epics-containers/ibek/releases/download/1.6.2/ibek.support.schema.json
+
+module: adsDriver
+
+defs:
+  - name: AdsSetLocalAMSNetID
+    description: |-
+      Set local AMS net ID
+    args:
+      - type: id
+        name: name
+        description: |-
+          Object and gui association name
+
+      - type: str
+        name: ams_net_id
+        description: |-
+          AMS net ID. Example: 192.168.122.75.1.1
+
+  - name: AdsOpen
+    description: |-
+      Create asyn AMS driver instance
+    args:
+      - type: id
+        name: name
+        description: |-
+          Object and gui association name
+
+      - type: str
+        name: PORT
+        description: |-
+          Instance ASYN port name
+      
+      - type: str
+        name: remote_ip_address
+        description: |-
+          Remote IP address.
+      
+      - type: str
+        name: remote_ams_net_id
+        description: |-
+          Remote AMS net ID
+      
+      - type: int
+        name: sum_buffer_nelm
+        description: |-
+          Total buffer size
+        default: 500
+
+      - type: int
+        name: ads_timeout
+        description: |-
+          ADS timeout in ms
+        default: 500
+
+      - type: int
+        name: device_ads_port
+        description: |-
+          ADS port
+        default: 851
+
+      - type: int
+        name: sum_read_period
+        description: |-
+          AMS read period in ms
+        default: 1
