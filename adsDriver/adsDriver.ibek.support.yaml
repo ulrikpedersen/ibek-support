@@ -16,6 +16,13 @@ defs:
         name: ams_net_id
         description: |-
           AMS net ID. Example: 192.168.122.75.1.1
+    pre_init:
+      - type: text
+        value: |
+          # AdsSetLocalAMSNetID(ams_net_id)
+          AdsSetLocalAMSNetID("{{ams_net_id}}")
+
+
 
   - name: AdsOpen
     description: |-
@@ -64,3 +71,12 @@ defs:
         description: |-
           AMS read period in ms
         default: 1
+
+    pre_init:
+      - type: text
+        value: |
+          # AdsOpen(port, remote_ip_address, remote_ams_net_id, sum_buffer_nelm, ads_timeout, device_ads_port, sum_read_period)
+          AdsOpen("{{PORT}}", "{{remote_ip_address}}", "{{remote_ams_net_id}}", {{sum_buffer_nelm}}, {{ads_timeout}}, {{device_ads_port}}, {{sum_read_period}})
+          # Enable asyn trace output for errors and warnings
+          asynSetTraceMask("{{PORT}}", 0, 0x21)
+
