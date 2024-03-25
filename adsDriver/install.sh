@@ -13,7 +13,7 @@ FOLDER=$(dirname $(readlink -f $0))
 set -xe
 
 ibek support apt-install --only=dev libboost-thread-dev
-ibek support apt-install --only=run libboost-thread1.73.0
+ibek support apt-install --only=run libboost-thread1.74.0
 
 # get the source and fix up the configure/RELEASE files
 # ibek support git-clone ${NAME} ${VERSION} --org https://github.com/Cosylab/
